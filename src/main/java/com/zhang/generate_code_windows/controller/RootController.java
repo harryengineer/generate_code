@@ -2,6 +2,7 @@ package com.zhang.generate_code_windows.controller;
 
 import java.util.stream.Collectors;
 
+import com.jfoenix.controls.JFXMasonryPane;
 import com.zhang.generate_code_windows.po.PersisDataPo;
 
 import javafx.collections.FXCollections;
@@ -30,11 +31,15 @@ public class RootController {
 	@FXML
 	private ListView<String> tableView;
 
+	@FXML
+    private JFXMasonryPane  jfxMasonryPane;
+
 
 
     @FXML
     private void initialize(){
-        this.tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+//        this.tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+
 
     }
 
@@ -53,7 +58,7 @@ public class RootController {
         this.dataPos = dataPos;
         ObservableList<String> stringObservableList = FXCollections.observableArrayList(dataPos.stream().map(PersisDataPo::getLinkName).collect(Collectors.toList()));
         this.dataPoListView.setItems(stringObservableList);
-	    tableView.setItems(stringObservableList);
+//	    tableView.setItems(stringObservableList);
 
     }
 
