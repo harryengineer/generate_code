@@ -30,8 +30,14 @@
             <artifactId>bootstrapfx-core</artifactId>
             <version>0.2.4</version>
         </dependency>
-
+        <dependency>
+            <groupId>lc.kra.system</groupId>
+            <artifactId>system-hook</artifactId>
+            <version>3.5</version>
+        </dependency>
     </dependencies>
+
+
 
     <build>
         <plugins>
