@@ -4,9 +4,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.zhang</groupId>
-    <artifactId>generate_code_windows</artifactId>
+    <artifactId>generate_code</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>generate_code_windows</name>
+    <name>generate_code</name>
     <description>the exe on the windows system</description>
 
     <properties>

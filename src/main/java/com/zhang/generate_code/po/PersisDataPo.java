@@ -1,4 +1,4 @@
-package com.zhang.generate_code_windows.po;
+package com.zhang.generate_code.po;
 
 import java.io.Serializable;
 
@@ -37,20 +37,15 @@ public class PersisDataPo implements Serializable {
 	 */
 	private Integer port;
 
-	/**
-	 * 具体库的名称
-	 */
-	private String schemaName;
 
 	private String path;
 
-	public PersisDataPo(String linkName, String username, String password, String host, Integer port, String schemaName, String path) {
+	public PersisDataPo(String linkName, String username, String password, String host, Integer port, String path) {
 		this.linkName = linkName;
 		this.username = username;
 		this.password = password;
 		this.host = host;
 		this.port = port;
-		this.schemaName = schemaName;
 		this.path = path;
 	}
 
@@ -62,7 +57,6 @@ public class PersisDataPo implements Serializable {
 				", password='" + password + '\'' +
 				", host='" + host + '\'' +
 				", port=" + port +
-				", schemaName='" + schemaName + '\'' +
 				", path='" + path + '\'' +
 				'}';
 	}
@@ -105,14 +99,6 @@ public class PersisDataPo implements Serializable {
 
 	public void setPort(Integer port) {
 		this.port = port;
-	}
-
-	public String getSchemaName() {
-		return schemaName;
-	}
-
-	public void setSchemaName(String schemaName) {
-		this.schemaName = schemaName;
 	}
 
 	public String getPath() {

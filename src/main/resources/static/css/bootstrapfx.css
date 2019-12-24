@@ -253,6 +253,21 @@ a.bg-danger:focused {
   -fx-background-radius: 4px;
   -fx-min-width: 80;
 }
+
+.btn-root {
+  -fx-font-weight: normal;
+  -fx-text-alignment: center;
+  -fx-cursor: default;
+  -fx-border-width: 5px;
+  -fx-border-style: solid;
+  -fx-background-insets: 0, 0, -1, 0;
+  -fx-padding: 6px 12px 6px 12px;
+  -fx-font-size: 14px;
+  -fx-background-radius: 4px;
+  -fx-min-width: 80;
+  -fx-border-color: #EDEDED;
+}
+
 .btn:hover, .btn:focused, .btn.focused {
   -fx-text-fill: #333;
   -fx-fill: #333;
@@ -324,7 +339,7 @@ a.bg-danger:focused {
   -fx-text-fill: #fff;
   -fx-fill: #fff;
   -fx-background-color: #337ab7;
-  -fx-border-color: #2e6da4;
+  /*-fx-border-color: #2e6da4;*/
 }
 .btn-primary:focused, .btn-primary.focused {
   -fx-text-fill: #fff;
@@ -379,8 +394,9 @@ a.bg-danger:focused {
   -fx-text-fill: #fff;
   -fx-fill: #fff;
   -fx-background-color: #5cb85c;
-  -fx-border-color: #4cae4c;
+  /*-fx-border-color: #4cae4c;*/
 }
+
 .btn-success:focused, .btn-success.focused {
   -fx-text-fill: #fff;
   -fx-fill: #fff;

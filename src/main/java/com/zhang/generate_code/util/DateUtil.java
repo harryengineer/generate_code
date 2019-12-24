@@ -1,4 +1,4 @@
-package com.zhang.generate_code_windows.util;
+package com.zhang.generate_code.util;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
