@@ -1,0 +1,14 @@
+
+.tree-view:focused{
+    -fx-background-insets: 0;
+    -fx-background-color: transparent, #A9A9A9, transparent, #A9A9A9;
+}
+
+.button:focused {
+    -fx-border-color:  #A9A9A9;
+}
+.scroll-pane:focused{
+    -fx-background-insets: 0;
+    -fx-background-color: transparent, #A9A9A9, transparent, #A9A9A9;
+}
+

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXListView?>
 <?import com.jfoenix.controls.JFXMasonryPane?>
+<?import com.jfoenix.svg.SVGGlyph?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Menu?>
@@ -9,36 +9,53 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 
-<?import com.jfoenix.controls.JFXTreeView?>
-<?import javafx.scene.control.TreeView?>
-<?import javafx.scene.control.TreeItem?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.image.Image?>
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" stylesheets="/static/css/bootstrapfx.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.zhang.generate_code.controller.RootController">
     <top>
         <MenuBar prefHeight="13.0" prefWidth="600.0" BorderPane.alignment="CENTER">
             <menus>
                 <Menu mnemonicParsing="false" text="文件">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="新建连接" />
-                        <MenuItem mnemonicParsing="false" onAction="#handleOpen"  text="加载配置文件" />
+                        <MenuItem mnemonicParsing="false" text="新建连接" onAction="#newConnction">
+                            <graphic>
+                                <SVGGlyph maxHeight="14" maxWidth="14" svgPathContent="M685.485 167.462H336.91c-20.916 0-34.857-13.894-34.857-34.738 0-20.843 13.942-34.738 34.857-34.738h348.576c20.915 0 34.857 13.895 34.857 34.738 0 20.844-13.943 34.738-34.858 34.738zM826.392 98.328h-57.719v55.738c0 38.213-43.37 69.477-81.714 69.477H338.384c-38.344 0-82.715-31.264-82.715-69.477V98.328h-56.718c-38.344 0-69.715 31.264-69.715 69.477v690.036c0 38.213 31.371 69.477 69.715 69.477h627.441c38.344 0 69.715-31.264 69.715-69.477V167.805c0-38.213-31.371-69.477-69.715-69.477zM687.288 610.679H547.455v139.347c0 20.915-13.895 34.857-34.738 34.857-20.844 0-34.738-13.943-34.738-34.857V610.679H338.712c-20.916 0-34.857-13.894-34.857-34.738 0-20.843 13.942-34.738 34.857-34.738h139.266V401.45c0-20.916 13.894-34.857 34.738-34.857 20.843 0 34.738 13.942 34.738 34.857v139.752h139.833c20.915 0 34.857 13.895 34.857 34.738 0.001 20.845-13.942 34.739-34.856 34.739z">
+                                </SVGGlyph>
+                            </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#handleOpen" text="加载配置">
+                            <graphic>
+                                <SVGGlyph maxHeight="14" maxWidth="14" svgPathContent="M831.9 395.4zM831.9 395.8c0 0.1 0.1 0.2 0.1 0.4v-0.7c-0.1 0-0.1 0.1-0.1 0.3zM922.8 497.1H184.5c-26.7 0-50.4 17.3-58.6 42.7L61.5 738.2V203.5h307.7c0 68 55 123 122.9 123h307.6V419c0.2 16.8 13.8 30.4 30.7 30.4 17 0 30.7-13.8 30.7-30.7 0-0.1-0.1-0.2-0.1-0.4h0.2v-91.8c0-34-27.5-61.5-61.5-61.6H492.1c-34 0-61.5-27.5-61.5-61.5 0-16.3-6.5-31.9-18-43.4s-27.2-18-43.4-18H61.5C27.6 142 0.1 169.5 0 203.4v724.2c0.1 34 27.6 61.4 61.6 61.4h738.1c26.8 0 50.5-17.2 58.7-42.7l125.9-387.7c-0.1-33.9-27.5-61.4-61.5-61.5zM983.5 173c-38.2-74-158.9-228.5-457-67.5 0 0 328.2-81.3 367.9 99.8l-54.4 1.3 134.4 84.5 49.4-150.8-40.3 32.7z" />
+                            </graphic>
+                        </MenuItem>
                         <MenuItem mnemonicParsing="false" text="退出" />
                     </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="编辑">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="修改" />
-                        <MenuItem mnemonicParsing="false" text="删除" />
-                    </items>
-                </Menu>
+                <!--<Menu mnemonicParsing="false" text="编辑">-->
+                    <!--<items>-->
+                        <!--<MenuItem mnemonicParsing="false" text="修改">-->
+                            <!--<graphic>-->
+                                <!--<SVGGlyph maxHeight="14" maxWidth="14" svgPathContent="M505.72 20.7c-270.62 0-490 219.38-490 490s219.38 490 490 490 490-219.38 490-490-219.38-490-490-490z m224.33 234.01a27.804 27.804 0 0 1 21.02 21.02 27.782 27.782 0 0 1-9.99 27.99L427.12 617.64c-9.97 9.48-25.6 9.48-35.57 0v0.04a32.174 32.174 0 0 1 0-35.57l310.52-317.42a27.78 27.78 0 0 1 27.98-9.98z m40.27 423.42c-0.02 53.83-43.67 97.46-97.5 97.46H337.89c-53.83-0.02-97.46-43.67-97.46-97.5V343.2c0-53.83 43.63-97.48 97.46-97.5H526.1c7.13-0.83 14.28 1.41 19.66 6.15a25.315 25.315 0 0 1 8.59 18.73c0.39 7.58-2.28 15-7.42 20.59a28.308 28.308 0 0 1-19.89 9.14H337.92c-23.59 0.25-42.66 19.3-42.93 42.89v336.38c0.27 23.59 19.34 42.65 42.93 42.89h335.39c23.58-0.27 42.63-19.32 42.89-42.89V494.32c-0.12-7.58 2.8-14.89 8.12-20.3 5.32-5.4 12.58-8.45 20.17-8.45v-0.08c14.15 0 24.84 13.2 25.83 30.72v181.92z" />-->
+                            <!--</graphic>-->
+                        <!--</MenuItem>-->
+                        <!--<MenuItem mnemonicParsing="false" text="删除">-->
+                            <!--<graphic>-->
+                                <!--<SVGGlyph maxHeight="14" maxWidth="14" svgPathContent="M517.59 21.609c-100.299 0-181.703 79.514-185.167 179.34H98.603c-25.979 0-47.235 21.099-47.235 47.236 0 25.98 21.099 47.237 47.236 47.237h52.117v528.416c0 99.196 67.233 180.285 150.37 180.285h423.55c82.98 0 150.37-80.616 150.37-180.285V295.737h47.236c25.98 0 47.236-21.1 47.236-47.237 0-25.98-21.099-47.236-47.236-47.236H702.441C699.449 101.124 617.888 21.61 517.59 21.61z m-96.677 179.34c3.464-51.172 45.19-90.85 96.834-90.85s93.37 39.835 96.362 90.85H420.913z m-119.98 714.842c-29.444 0-61.88-37.789-61.88-91.953V295.737h547.311V824.31c0 54.007-32.436 91.954-61.88 91.954H300.933v-0.473z m0 0M364.387 802.267c21.57 0 39.363-21.571 39.363-48.653V476.022c0-27.082-17.635-48.654-39.363-48.654-21.572 0-39.364 21.572-39.364 48.654v277.592c0 26.924 17.32 48.653 39.364 48.653z m142.496 0c21.571 0 39.363-21.571 39.363-48.653V476.022c0-27.082-17.635-48.654-39.363-48.654-21.571 0-39.364 21.572-39.364 48.654v277.592c0 26.924 17.793 48.653 39.364 48.653z m149.896 0c21.571 0 39.364-21.571 39.364-48.653V476.022c0-27.082-17.635-48.654-39.364-48.654-21.571 0-39.363 21.572-39.363 48.654v277.592c0 26.924 17.162 48.653 39.363 48.653z m0 0" />-->
+                            <!--</graphic>-->
+                        <!--</MenuItem>-->
+                    <!--</items>-->
+                <!--</Menu>-->
                 <Menu mnemonicParsing="false" text="帮助">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="About" />
-                    </items>
+                    <MenuItem mnemonicParsing="false" text="About">
+                        <graphic>
+                            <SVGGlyph maxHeight="14" maxWidth="14" svgPathContent="M505.181 742.018c-26.499 0-47.972 21.481-47.972 47.968s21.474 47.977 47.972 47.977c26.48 0 47.948-21.488 47.948-47.977s-21.469-47.968-47.948-47.968zM505.181 70.128c-246.883 0-447.689 200.826-447.689 447.683 0 246.874 200.806 447.705 447.689 447.705 246.849 0 447.683-200.83 447.683-447.705 0-246.858-200.836-447.683-447.683-447.683zM505.181 901.273c-211.46 0-383.455-172.045-383.455-383.459 0-211.431 171.995-383.436 383.455-383.436 211.391 0 383.455 172.003 383.455 383.436 0 211.417-172.064 383.459-383.455 383.459zM505.162 231.205c-88.146 0-159.892 71.093-159.892 158.448 0 17.648 14.347 31.981 31.981 31.981 17.675 0 31.985-14.332 31.985-31.981 0-52.987 42.167-94.498 95.946-94.498 52.873 0 95.926 43.366 95.926 96.677 0 21.324-26.753 48.058-52.634 73.965-35.309 35.267-75.282 75.237-75.282 127.563v54.067c0 17.663 14.341 31.985 31.989 31.985 17.634 0 31.97-14.363 31.97-32.016v-54.071c0-25.807 28.719-54.524 56.54-82.282 35.074-35.074 71.383-71.346 71.383-119.221-0.002-88.573-71.718-160.617-159.914-160.617z" />
+                        </graphic>
+                    </MenuItem>
                 </Menu>
             </menus>
         </MenuBar>
@@ -47,7 +64,7 @@
         <SplitPane dividerPositions="0.22448979591836735" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-                    <TreeView fx:id="treeView" >
+                    <TreeView fx:id="treeView" prefHeight="572.0" prefWidth="221.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     </TreeView>
 
                 </AnchorPane>
@@ -57,21 +74,17 @@
                             <top>
                                 <Pane BorderPane.alignment="CENTER">
                                     <children>
-                                        <Button layoutX="11.0" mnemonicParsing="false"   text="全部生成" >
+                                        <Button layoutX="11.0" mnemonicParsing="false" text="全部生成">
                                             <graphic>
-                                                <ImageView fitHeight="16.0" fitWidth="16.0" >
-                                                    <image>
-                                                        <Image url="/static/img/all.png" />
-                                                    </image>
+                                                <ImageView fitHeight="16.0" fitWidth="16.0">
+                                                        <Image requestedHeight="16" requestedWidth="16" url="/static/img/all.png" />
                                                 </ImageView>
                                             </graphic>
                                         </Button>
-                                        <Button layoutX="106.0" mnemonicParsing="false"   text="选中生成" >
+                                        <Button layoutX="106.0" mnemonicParsing="false" text="选中生成">
                                             <graphic>
                                                 <ImageView fitHeight="16.0" fitWidth="16.0">
-                                                    <image>
                                                         <Image url="/static/img/choose.png" />
-                                                    </image>
                                                 </ImageView>
                                             </graphic>
                                         </Button>
